@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="wo-SN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VanillaJS221 Integration web 2024">
+    <meta name="keywords" content="HTML,CSS,XML">
+    <meta name="author" content="NdiasseMBOW">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Inclusion de la bibliothèque GSAP -->
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+    <!-- Inclusion de la bibliothèque ScrollTrigger -->
+    <script src="https://unpkg.com/gsap@3.9.0/dist/ScrollTrigger.min.js"></script>
+    <!-- Lien vers votre feuille de style CSS personnalisée -->
+    <link rel="stylesheet" href="style.css">
+    <title>Santé</title>
+</head>
+
+<body>
+    <!-- Conteneur principal de la page -->
+    <div id="container">
+
+        <!-- En-tête de la page -->
+        <header>
+            <nav>
+                <span id="logo">
+                    <a href="index.html"><strong>faju</strong></a>
+                </span>
+                <ul>
+                    <a href="#" style="color: black;"><span><i class="fa fa-user"></i></span></a>
+                    <li><a href="#">Mon compte <br> Connexion</a></li>
+                    <li><a href="#" target="_blank">Fiches et conseils médicaux <br> Découvrir actu santé</a></li>
+                </ul>
+            </nav>
+
+            <hr>
+
+            <!-- Section 1 de la page -->
+            <section class="section1">
+                <div class="left_text">
+                    <h1>
+                        Trouver un professionnel <br> de santé et prenez rendez-vous <br> en ligne!
+                    </h1>
+                    <p>
+                        Rapide, Gratuit et Sécurisé
+                    </p>
+                </div>
+                <div class="right_design">
+                    <img id="img1" src="images/medcin.svg" alt="Images de medecin">
+                </div>
+            </section>
+        </header>
+
+        <!-- Section 2 de la page -->
+        <section class="section2">
+            <div class="left_text">
+                <h1>
+                    Prendre RDV
+                </h1>
+                <p>
+                    En cabinet ou en vidéo, consultez votre Docteur, <br>
+                    Médecin, Généraliste, Spécialiste (dentiste, <br> dermatologue, gynécologue, cardiologue, pédiatre, <br>
+                    ophtalmologue...) ou professionnel paramédical <br>
+                    (kinésithérapeute, orthophoniste, orthoptiste, <br>
+                    ostéopathe, diététicien, podologue ...)
+                </p>
+                <a href="#" id="btn">Demander un rendez-vous</a>
+            </div>
+            <div class="right_design">
+                <img id="img2" src="images/prendre_rv.svg" alt="Image prendre_rv">
+            </div>
+        </section>
+
+        <!-- Section 3 de la page -->
+        <section class="section3">
+            <div class="left_design">
+                <img id="img3" src="images/cosulter_doossier.svg" alt="Image cosulter_doossier">
+            </div>
+            <div class="right_text">
+                <h1>
+                    Consulter Dossier
+                </h1>
+                <p>
+                    En cabinet ou en vidéo, consultez votre Docteur, <br>
+                    Médecin, Généraliste, Spécialiste (dentiste, <br> dermatologue, gynécologue, cardiologue, pédiatre, <br>
+                    ophtalmologue...) ou professionnel paramédical <br>
+                    (kinésithérapeute, orthophoniste, orthoptiste, <br>
+                    ostéopathe, diététicien, podologue ...)
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+<script>
+    gsap.from("#logo", { duration: 1, opacity: 0, x: -50 });
+
+    gsap.from("nav ul li", { duration: 1, opacity: 0, x: -50, stagger: 0.2 });
+
+    gsap.from(".section1 .left_text", { duration: 1, opacity: 0, y: 50 });
+ 
+    gsap.from(".section1 .right_design", { duration: 1, opacity: 0, x: 50 });
+  
+    gsap.registerPlugin(ScrollTrigger);
+     gsap.utils.toArray('[data-scroll]').forEach((element) => {
+        gsap.from(element, {
+            opacity: 0,
+            y: 50,
+            scrollTrigger: {
+                trigger: element,
+                start: 'top 80%', 
+                end: 'bottom 20%', 
+                toggleActions: 'play none none reverse', 
+            },
+        });
+    });
+</script>
+
+
+</body>
+
+</html>

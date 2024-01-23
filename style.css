@@ -1,0 +1,390 @@
+/* CSS GENERAL */
+#container
+{
+    margin: 0;
+    position: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+
+/* HEADER */
+header
+{
+    background: aqua;
+}
+
+
+header nav
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-start;
+}
+header nav #logo
+{
+   background: white;
+   color: rgb(0, 255, 255);
+   padding: 0 35px;
+   margin: 0 20px;
+   border-radius: 10px;
+   box-shadow: 3px 3px 3px black;
+    /* align-self: stretch flex-end flex-start; Contrôle l'alignement d'un élément spécifique à l'intérieur du conteneur. */
+    /* flex-grow: 2; Cet élément aura deux fois plus d'espace que les autres */
+   flex-shrink: 0; /* Cet élément ne se réduira pas */
+   flex-basis: 50px; /* Taille initiale de cet élément */
+   flex: 0 0 50px; /* flex-grow: 0; flex-shrink: 0; flex-basis: 50px; */
+}
+header nav #logo a
+{
+   text-decoration: none;
+   font-family: courier;
+   font-style: italic;
+   font-size: 2rem;
+   text-transform: capitalize;
+}
+
+header nav ul
+{
+    box-sizing: border-box;
+}
+header nav ul span i{
+    transform: scale(4);
+    margin-bottom: 5px;
+}
+header nav ul li
+{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    margin: 0 40px;
+    position: relative;
+}
+header nav ul li a
+{
+    color: white;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul li a::before,
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; 
+    background-color: #3498db; 
+    transition: width 0.3s;
+}
+
+nav ul li a::before {
+    top: 0;
+    left: 0;
+}
+
+nav ul li a::after {
+    bottom: 0;
+    right: 0;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after {
+    width: 100%;
+} 
+
+header nav ul li a:hover
+{
+    background: transparent;
+    color: rgb(221, 15, 221);
+}
+
+
+hr
+{
+    background-color: white;
+    height: 1.6px;
+}
+
+
+
+/* SECTION 1 */
+header .section1
+{
+    display: grid;
+    grid-template-columns: 60% 35%;
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-gap: 5%;
+}
+header .section1 .left_text
+{
+    text-align: center;
+}
+header .section1 .left_text h1
+{
+    font-size: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+header .section1 .left_text p
+{
+    color: white;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+header .section1 .right_design #img1 
+{
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+/* SECTION 2 */
+.section2
+{
+     /* background: linear-gradient(to right, #ffcc00, #ff3300); radial, repeat-radial repeat-linear closest-side etc*/
+     background: linear-gradient(to right, white 80%, aqua);
+    display: grid;
+    grid-template-columns: 65% 35%;
+    margin: -10px 0 0 0;
+    margin-bottom: 95px;
+}
+
+.section2 .left_text
+{
+    text-align: center;
+}
+.section2 .left_text h1
+{
+    color: aqua;
+    font-size: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+.section2 .left_text p
+{
+    color: black;
+    margin: 35px;
+    font-size: 2rem;
+    font-style: italic;
+}
+.section2 .left_text #btn
+{
+    text-decoration: none;
+    background: aqua;
+    padding: 15px;
+    color: white;
+    font-size: 2rem;
+    border-radius: 20px;
+}
+
+.section2 .right_design #img2
+{
+    transform: rotateY(180deg);
+
+}
+
+
+
+
+
+
+/* SECTION 3 */
+.section3
+{
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
+
+.left_design #img3
+{
+    transform: rotateY(180deg);
+}
+.section3 .right_text
+{
+    text-align: center;
+}
+.section3 .right_text h1
+{
+    color: aqua;
+    font-size: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+.section3 .right_text p
+{
+    color: black;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+
+
+
+/* MEDIA QUERIES POUR LE RESPONSIVE */
+@media screen and (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        text-align: center; 
+    }
+    span i 
+    {
+        display: none;
+        visibility: hidden;
+    }
+    header nav ul li {
+        margin: 10px 0; 
+    }
+
+    header .section1 .left_text h1 {
+        font-size: 1.5rem; 
+    }
+
+    header .section1 .left_text p {
+        font-size: 1rem;
+    }
+
+    .section2
+    {
+        display: flex;
+        flex-direction: column;
+        text-align: center; 
+    }
+    .section3
+    {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center; 
+    }
+    .section2 .left_text h1 {
+        font-size: 1.5rem; 
+    }
+
+    .section2 .left_text p {
+        font-size: 1rem;
+    }
+
+    .section2 .left_text #btn {
+        padding: 8px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    .section3 .right_text h1 {
+        font-size: 1.5rem;
+    }
+
+    .section3 .right_text p {
+        font-size: 1rem;
+    }
+}
+
+/* CSS FLOAT pas utilise pour la mise en forme trop fastidieux */
+/* CSS TABLE pas utilise pour la mise en forme reserve entierement pour les données tabulaire */
+/* CSS FRAMEWORK(Bootstrap etc) c'est un autre domaine*/
+/* PAS DE CSS COLUMNS column-count: 3 column-gap: 20px;*/
+/* pas Animation 2D ou 3d */
+/* @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+  .element-2d {
+    animation: rotate 2s linear infinite;
+  }
+  
+  .element-3d {
+    animation: spin 4s linear infinite;
+  } */
+
+/* PAS MENU DEROULANT */
+/* body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+  }
+  
+  .menu {
+    background-color: #333;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu ul li {
+    display: inline-block;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menu ul ul {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    border-top: 1px solid #666;
+  }
+  
+  .menu ul li:hover > ul {
+    Sélecteurs Enfants : Syntaxe : parent > enfant : Cible les éléments enfants directs du parent. 
+     Sélecteurs Adjacents : Syntaxe : element1 + element2Cible l'élément2 qui est immédiatement précédé par l'élément1.
+    display: inherit;
+  }
+  
+  .menu ul ul li {
+    display: list-item;
+    position: relative;
+  }
+  
+  .menu ul ul a {
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  .menu ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+  .menu ul ul,
+  .menu ul ul ul {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  
+  .menu ul li:hover > ul, 
+  .menu ul ul li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+  }
+ */
